@@ -1,0 +1,12 @@
+@import 'smr-chat-theme';
+@import 'mat-overriade';
+@import 'ms-index-style';
+@import 'ms-palette-styles';
+
+// loacaly mat-cons load
+@import '~material-icons-font/sass/variables';
+ @import '~material-icons-font/sass/mixins';
+ $MaterialIcons_FontPath: "~material-icons-font/fonts";
+ @import '~material-icons-font/sass/main';
+ @import '~material-icons-font/sass/Regular';
+

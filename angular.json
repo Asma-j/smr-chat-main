@@ -1,0 +1,765 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "front-share": {
+      "root": "libs/shared/front/front-share",
+      "sourceRoot": "libs/shared/front/front-share/src",
+      "projectType": "library",
+      "prefix": "mslibs",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/front/front-share/src/test.ts",
+            "tsConfig": "libs/shared/front/front-share/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/front/front-share/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/front-share/tsconfig.lib.json",
+              "libs/shared/front/front-share/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ms-auth": {
+      "projectType": "library",
+      "root": "libs/shared/front/ms-auth",
+      "sourceRoot": "libs/shared/front/ms-auth/src",
+      "prefix": "mslibs",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/ms-auth/tsconfig.lib.json",
+              "libs/shared/front/ms-auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/front/ms-auth/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/front/ms-auth/jest.config.js",
+            "tsConfig": "libs/shared/front/ms-auth/tsconfig.spec.json",
+            "setupFile": "libs/shared/front/ms-auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ms-mat-theme": {
+      "root": "libs/shared/front/ms-mat-theme",
+      "sourceRoot": "libs/shared/front/ms-mat-theme/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/ms-mat-theme/tsconfig.lib.json",
+              "libs/shared/front/ms-mat-theme/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/front/ms-mat-theme/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/front/ms-mat-theme/jest.config.js",
+            "tsConfig": "libs/shared/front/ms-mat-theme/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ms-layout": {
+      "root": "libs/shared/front/ms-layout",
+      "sourceRoot": "libs/shared/front/ms-layout/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/ms-layout/tsconfig.lib.json",
+              "libs/shared/front/ms-layout/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/front/ms-layout/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/front/ms-layout/jest.config.js",
+            "tsConfig": "libs/shared/front/ms-layout/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ms-user": {
+      "projectType": "library",
+      "root": "libs/shared/front/ms-user",
+      "sourceRoot": "libs/shared/front/ms-user/src",
+      "prefix": "mslibs",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/ms-user/tsconfig.lib.json",
+              "libs/shared/front/ms-user/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/front/ms-user/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/front/ms-user/jest.config.js",
+            "tsConfig": "libs/shared/front/ms-user/tsconfig.spec.json",
+            "setupFile": "libs/shared/front/ms-user/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ms-route": {
+      "projectType": "library",
+      "root": "libs/shared/front/ms-route",
+      "sourceRoot": "libs/shared/front/ms-route/src",
+      "prefix": "mslibs",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/front/ms-route/tsconfig.lib.json",
+              "libs/shared/front/ms-route/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/front/ms-route/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/front/ms-route/jest.config.js",
+            "tsConfig": "libs/shared/front/ms-route/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/front/ms-route/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-back-auth": {
+      "root": "libs/shared/back/auth",
+      "sourceRoot": "libs/shared/back/auth/src",
+      "projectType": "library",
+      "prefix": "mslibs",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/back/auth/tsconfig.lib.json",
+              "libs/shared/back/auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/back/auth/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/back/auth/jest.config.js",
+            "tsConfig": "libs/shared/back/auth/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-back-user": {
+      "root": "libs/shared/back/user",
+      "sourceRoot": "libs/shared/back/user/src",
+      "projectType": "library",
+      "prefix": "mslibs",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/back/user/tsconfig.lib.json",
+              "libs/shared/back/user/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/back/user/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/back/user/jest.config.js",
+            "tsConfig": "libs/shared/back/user/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "smr-chat": {
+      "projectType": "application",
+      "root": "apps/smr-chat/smr-chat-ui",
+      "sourceRoot": "apps/smr-chat/smr-chat-ui/src",
+      "prefix": "mslibs",
+      "architect": {
+        "build-docker-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "docker build --rm  -f ./apps/smr-chat/smr-chat-ui/Dockerfile . --tag {args.registry}/private/smr-chat-ui:{args.tag}"
+            ]
+          }
+        },
+        "push-docker-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "docker push {args.registry}/private/smr-chat-ui:{args.tag}"
+              }
+            ]
+          }
+        },
+        "deploy-kube-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "kubectl apply -f ./apps/smr-chat/smr-chat-ui/kube-deploy.yaml --namespace={args.namespace}"
+              },
+              {
+                "command": "kubectl rollout restart deployment/smr-chat-ui --namespace={args.namespace}"
+              }
+            ]
+          }
+        },
+        "build-docker-local": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "docker build --rm  -f ./apps/smr-chat/smr-chat-ui/Dockerfile . --tag smr-chat-ui:{args.tag}"
+              }
+            ]
+          }
+        },
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/smr-chat",
+            "index": "apps/smr-chat/smr-chat-ui/src/index.html",
+            "main": "apps/smr-chat/smr-chat-ui/src/main.ts",
+            "polyfills": "apps/smr-chat/smr-chat-ui/src/polyfills.ts",
+            "tsConfig": "apps/smr-chat/smr-chat-ui/tsconfig.app.json",
+            "assets": [
+              "apps/smr-chat/smr-chat-ui/src/favicon.ico",
+              "apps/smr-chat/smr-chat-ui/src/assets",
+              {
+                "glob": "**/*",
+                "input": "libs/shared/front/ms-mat-theme/src/lib/assets",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "apps/smr-chat/smr-chat-ui/src/styles.scss",
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/material-icons-font/material-icons-font.css"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/front/ms-mat-theme/src/lib/styles/"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/smr-chat/smr-chat-ui/src/environments/environment.ts",
+                  "with": "apps/smr-chat/smr-chat-ui/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "aot": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "smr-chat:build",
+            "proxyConfig": "apps/smr-chat/smr-chat-ui/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "smr-chat:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smr-chat:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/smr-chat/smr-chat-ui/src/**/*.ts",
+              "apps/smr-chat/smr-chat-ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/smr-chat"
+          ],
+          "options": {
+            "jestConfig": "apps/smr-chat/smr-chat-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "smr-chat-e2e": {
+      "root": "apps/smr-chat/smr-chat-e2e",
+      "sourceRoot": "apps/smr-chat/smr-chat-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/smr-chat/smr-chat-e2e/cypress.json",
+            "tsConfig": "apps/smr-chat/smr-chat-e2e/tsconfig.e2e.json",
+            "devServerTarget": "smr-chat:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "smr-chat:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/smr-chat/smr-chat-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "backend-api-smr-chat": {
+      "root": "apps/smr-chat/api-smr-chat",
+      "sourceRoot": "apps/smr-chat/api-smr-chat/src",
+      "projectType": "application",
+      "prefix": "backend-api-smr-chat",
+      "architect": {
+        "build-docker-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "docker build --rm  -f ./apps/smr-chat/api-smr-chat/Dockerfile . --tag {args.registry}/private/smr-chat-api:{args.tag}"
+            ]
+          }
+        },
+        "push-docker-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "docker push {args.registry}/private/smr-chat-api:{args.tag}"
+            ]
+          }
+        },
+        "deploy-kube-ci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "kubectl apply -f ./apps/smr-chat/api-smr-chat/kube-deploy.yaml --namespace={args.namespace}"
+              },
+              {
+                "command": "kubectl rollout restart deployment/smr-chat-api --namespace={args.namespace}"
+              }
+            ]
+          }
+        },
+        "build-docker-local": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "docker build --rm  -f ./apps/smr-chat/api-smr-chat/Dockerfile . --tag smr-chat-api:{args.tag}"
+              }
+            ]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/backend/api-smr-chat",
+            "main": "apps/smr-chat/api-smr-chat/src/main.ts",
+            "tsConfig": "apps/smr-chat/api-smr-chat/tsconfig.app.json",
+            "assets": [
+              "apps/smr-chat/api-smr-chat/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/smr-chat/api-smr-chat/src/environments/environment.ts",
+                  "with": "apps/smr-chat/api-smr-chat/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-api-smr-chat:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/smr-chat/api-smr-chat/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/backend/api-smr-chat"
+          ],
+          "options": {
+            "jestConfig": "apps/smr-chat/api-smr-chat/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-back-chat": {
+      "root": "libs/shared/back/chat",
+      "sourceRoot": "libs/shared/back/chat/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/back/chat/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/back/chat"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/back/chat/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-chat": {
+      "projectType": "library",
+      "root": "libs/shared/front/chat",
+      "sourceRoot": "libs/shared/front/chat/src",
+      "prefix": "mslibs",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front/chat/src/**/*.ts",
+              "libs/shared/front/chat/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front/chat"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front/chat/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-user-models": {
+      "root": "libs/shared/front-back/user/models",
+      "sourceRoot": "libs/shared/front-back/user/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/user/models/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/user/models"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/user/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-user-dtos": {
+      "root": "libs/shared/front-back/user/dtos",
+      "sourceRoot": "libs/shared/front-back/user/dtos/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/user/dtos/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/user/dtos"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/user/dtos/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-chat-dtos": {
+      "root": "libs/shared/front-back/chat/dtos",
+      "sourceRoot": "libs/shared/front-back/chat/dtos/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/chat/dtos/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/chat/dtos"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/chat/dtos/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-chat-models": {
+      "root": "libs/shared/front-back/chat/models",
+      "sourceRoot": "libs/shared/front-back/chat/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/chat/models/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/chat/models"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/chat/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-widget": {
+      "root": "libs/shared/front-back/widget",
+      "sourceRoot": "libs/shared/front-back/widget/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/widget/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/widget"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/widget/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-front-back-auth-dtos": {
+      "root": "libs/shared/front-back/auth/dtos",
+      "sourceRoot": "libs/shared/front-back/auth/dtos/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/front-back/auth/dtos/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/front-back/auth/dtos"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/front-back/auth/dtos/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss",
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss",
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "free-life"
+}

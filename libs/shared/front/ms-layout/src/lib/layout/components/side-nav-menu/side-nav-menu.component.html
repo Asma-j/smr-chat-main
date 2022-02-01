@@ -1,0 +1,54 @@
+<ng-container *ngFor="let item of navItems; let index=index; last as isLast">
+  <mslibs-nav-menu-item *ngIf="!isLast" [navItem]="item"></mslibs-nav-menu-item>
+</ng-container>
+
+  <!-- <div *ngIf="isLast" class="ms-last-item-bottom-menu">
+    <span class="left-menu-config">
+      <span>
+        <mat-slide-toggle color="primary" [checked]="isConfigActive" (toggleChange)="toggleConfig()">
+        </mat-slide-toggle>
+      </span>
+    </span>
+    <span class="p-col" style="width: 100%;">
+     <mslibs-nav-menu-item [navItem]="item"></mslibs-nav-menu-item>
+    </span>
+  </div> -->
+
+<!-- <a mat-list-item *ngIf="isLast" 
+    [ngClass]="{ 'activeItem': isActiveItem, 'expanded': expanded}" 
+    class="p-justify-between">
+    <span class="p-grid p-align-center" [ngStyle]="{'padding-left': (depth * 12) + 'px'}" >
+    <mat-icon class="routeIcon">{{navItem.matIcon}}</mat-icon>
+    <span  [ngClass]="{ 'nav-item-text': navItem.children && navItem.children.length}"
+    (click)="clickParentText(navItem);$event.stopPropagation()"
+    >{{navItem.name}}</span> 
+  </span>
+  </a> -->
+
+<!-- <div>
+    <a mat-list-item  *ngIf="isLast" class="ms-last-item-bottom-menu">
+      <span class="left-menu-config">
+        <span>
+          <mat-slide-toggle color="primary" [checked]="isConfigActive" (toggleChange)="toggleConfig()">
+          </mat-slide-toggle>
+        </span>
+      </span>
+      <span>Config</span>
+    </a>
+  </div> -->
+
+<!-- <span [ngClass]="{ 'ms-last-item-bottom-menu' : isLast }"
+  *ngFor="let navItem of navItems; let index=index; last as isLast">
+  <a mat-list-item [class.activeItem]="selectedItemIndex === index" (click)="setActiveItemMenu(index)"
+    [routerLink]="[ navItem.link ]">
+    <mat-icon color="primary" style="padding-right: 2px;"> {{ navItem.matIcon }} </mat-icon>
+    <span *ngIf="isFull"> {{ navItem.name }} </span>
+  </a>
+
+  <div *ngIf="isLast" class="left-menu-config">
+    <span>
+      <mat-slide-toggle color="primary"   [checked]="isConfigActive" (toggleChange)="toggleConfig()">Config</mat-slide-toggle>
+    </span>
+  </div>
+
+</span> -->

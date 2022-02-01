@@ -1,0 +1,30 @@
+<mat-card class="ms-public-forms-card">
+  <mat-card-header>
+    <div class="display-flex p-justify-center full-width">
+      <div *ngIf="appPhotoUrl; else defaultIcon">
+      <img src="{{appPhotoUrl}}" alt="image" class="ms-public-header-logoPhoto">
+    </div>
+    <ng-template #defaultIcon>
+      <div mat-card-avatar class="ms-public-header-logo">
+        <mat-icon [inline]="true" color="accent">{{appLogo}}</mat-icon>
+      </div>
+    </ng-template>
+    </div>
+    <!-- 
+      <mat-card-title>{{appTitle}}</mat-card-title>
+      <mat-card-subtitle>{{pageTitle}}</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content class="mr-top-16">
+    <ng-content select="[c-content]"></ng-content>
+  </mat-card-content>
+
+  <div class="p-grid p-align-center">
+    <div class="p-col-12 mr-bottom-16">
+      <mat-divider [inset]="true"></mat-divider>
+    </div>
+    <div class="p-col-12">
+      <ng-content select="[c-bottombar]"></ng-content>
+    </div>
+  </div>
+
+</mat-card>

@@ -1,0 +1,73 @@
+@import "~@angular/material/theming";
+// app
+@import "app/ms-profile.scss";
+@import "app/ms-common.scss";
+@import "app/ms-collections.scss";
+@import "app/ms-project.scss";
+@import "app/ms-layout.scss";
+// custom palette
+@import "ms-palette";
+//@import "ms-palette-styles";
+
+@include mat-core();
+// Define the default theme
+$ms-app-primary: mat-palette($mat-purple,500);
+$ms-app-accent: mat-palette($mat-blue, 400, 700, 50);
+$ms-app-warn: mat-palette($mat-red,800);
+
+$background-color: mat-palette($mat-purple, 500);
+$foreground-color: mat-palette($mat-red, 500);
+
+// Create the theme object (a Sass map containing all of the palettes).
+// $ms-app-primary,$ms-app-accent, $ms-app-warn
+$ms-app-theme: mat-light-theme((
+  color: (
+    primary: $ms-app-primary,
+    accent: $ms-app-accent,
+    warn: $ms-app-warn
+  )
+));
+// $ms-app-theme: (
+//   primary: $ms-app-primary,
+//   accent: $ms-app-accent,
+//   warn: $ms-app-warn
+//   is-dark: false,
+//   foreground: $foreground-color,
+//   background: $background-color,
+// );
+
+// Insert custom background color
+$background: map-get($ms-app-theme, background);
+$background: map_merge($background, (background: $background-color));
+$ms-app-themee: map_merge($ms-app-theme, (background: $background));
+//merge custom ms-platte
+$ms-app-theme: map_merge($ms-app-theme, (custom: $ms-app-custom));
+$custom: map-get($ms-app-theme, custom);
+
+// Include the default theme styles.
+@include angular-material-theme($ms-app-theme);
+
+// app mixin theme
+@include ms-common-theme($ms-app-theme);
+@include ms-collection-theme($ms-app-theme);
+@include ms-layout-theme($ms-app-theme);
+@include ms-profile-theme($ms-app-theme);
+@include ms-project-theme($ms-app-theme);
+
+// Dark Define an alternate second ms-ms theme.
+$ms-ms-primary: mat-palette($mat-deep-orange, 900);
+$ms-ms-accent: mat-palette($mat-amber, A200, A100, A400);
+$ms-ms-warn: mat-palette($mat-blue,700);
+
+$ms-ms-theme: mat-dark-theme( $ms-app-primary,$ms-app-accent, $ms-app-warn);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+.ms-ms-theme {
+  @include angular-material-theme($ms-ms-theme);
+  //app
+  @include ms-common-theme($ms-ms-theme);
+  @include ms-collection-theme($ms-ms-theme);
+  @include ms-layout-theme($ms-ms-theme);
+  @include ms-profile-theme($ms-ms-theme);
+  @include ms-project-theme($ms-ms-theme);
+}

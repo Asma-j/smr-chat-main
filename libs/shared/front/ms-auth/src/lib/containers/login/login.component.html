@@ -1,0 +1,71 @@
+<mslibs-public-forms-card pageTitle="Login">
+  <div c-content>
+    <div class="p-grid">
+
+      <div class="p-col-12">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" />
+            <div *ngIf="submitted && loginForm.controls.email.errors">
+              <mat-error *ngIf="loginForm.controls.email.errors.required">Email is required</mat-error>
+            </div>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password" type="password" />
+            <div *ngIf="submitted && loginForm.controls.password.errors">
+              <mat-error *ngIf="loginForm.controls.password.errors.required">Password is required</mat-error>
+            </div>
+          </mat-form-field>
+          <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+          <mat-error *ngIf="error" class="alert alert-danger">{{
+        error
+      }}</mat-error>
+
+          <div class="p-grid p-justify-around">
+            <button mat-raised-button type="submit" color="primary" [disabled]="!loginForm.valid">
+              <mat-icon>exit_to_app</mat-icon> Login
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="p-col-12 mr-bottom-16">
+        <mat-divider [inset]="true"></mat-divider>
+      </div>
+
+      <div class="p-col-12 ">
+        <div class="p-grid p-align-center">
+
+          <div class="p-col-12 p-grid p-justify-around">
+            <span class="mat-h3">Continue with</span>
+          </div>
+
+          <div class="p-col-6">
+            <button mat-raised-button (click)="googleLogin()">
+              <mat-icon svgIcon="googlelogo"></mat-icon>
+              Google
+            </button>
+          </div>
+          <div class="p-col-6">
+            <button mat-raised-button (click)="facebookLogin()">
+              <mat-icon svgIcon="facebooklogo"></mat-icon>
+              Facebook
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div c-bottombar>
+    <div class="p-justify-between p-grid p-align-center">
+      <span>Create an account</span>
+      <span class="left-flex-spacer"></span>
+      <button mat-raised-button [routerLink]="['/public/register']">
+        <mat-icon>how_to_reg</mat-icon> Register
+      </button>
+    </div>
+  </div>
+
+</mslibs-public-forms-card>

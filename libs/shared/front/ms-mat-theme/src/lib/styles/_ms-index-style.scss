@@ -1,0 +1,232 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* prime-flex ovvirade */
+.p-grid {
+  margin-right: -0.25em !important;
+  margin-left: -0.25em !important;
+  margin-top: -0.25em !important;
+}
+
+.p-grid-no-m{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-col-no-m{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.p-col-fixed,
+.p-col,
+.p-col-1,
+.p-col-2,
+.p-col-3,
+.p-col-4,
+.p-col-5,
+.p-col-6,
+.p-col-7,
+.p-col-8,
+.p-col-9,
+.p-col-10,
+.p-col-11,
+.p-col-12 {
+  padding: 0.25em !important;
+}
+
+.p-sm-1,
+.p-sm-2,
+.p-sm-3,
+.p-sm-4,
+.p-sm-5,
+.p-sm-6,
+.p-sm-7,
+.p-sm-8,
+.p-sm-9,
+.p-sm-10,
+.p-sm-11,
+.p-sm-12,
+.p-md-1,
+.p-md-2,
+.p-md-3,
+.p-md-4,
+.p-md-5,
+.p-md-6,
+.p-md-7,
+.p-md-8,
+.p-md-9,
+.p-md-10,
+.p-md-11,
+.p-md-12,
+.p-lg-1,
+.p-lg-2,
+.p-lg-3,
+.p-lg-4,
+.p-lg-5,
+.p-lg-6,
+.p-lg-7,
+.p-lg-8,
+.p-lg-9,
+.p-lg-10,
+.p-lg-11,
+.p-lg-12,
+.p-xl-1,
+.p-xl-2,
+.p-xl-3,
+.p-xl-4,
+.p-xl-5,
+.p-xl-6,
+.p-xl-7,
+.p-xl-8,
+.p-xl-9,
+.p-xl-10,
+.p-xl-11,
+.p-xl-12 {
+  padding: 0.25em !important;
+}
+/* */
+
+.ms-tree-container {
+  text-align: center;
+}
+.no-wrap {
+  flex-wrap: nowrap !important;
+}
+
+.bullet {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+.align-icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.display-flex {
+  display: flex
+}
+
+.item-data-value {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+// /* update custom scroll bar style */
+/* width & height */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Scroll bar */
+
+/* view footer management */
+.ms-view-content {
+  top: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.ms-view-active-footer {
+  top: 64px;
+  bottom: 48px;
+}
+
+.ms-is-mobile .ms-view-active-footer {
+  top: 56px;
+  bottom: 48px;
+}
+
+/** calendar */
+.ms-calendar-container {
+  // max-width: 500px;
+  // max-height: 500px;
+    // max-width: 500px;
+    // min-width: 360px;
+    max-width: 500px;
+    min-width: 276px;
+
+}
+
+/* add button*/
+.ms_add_button {
+  position: fixed;
+  bottom: 12px;
+  right: 24px;
+  z-index: 1;
+  /* top: calc(100% - 60px); */
+  /* left: calc(100% - 60px); */
+}
+.ms_add_button_footer{
+  bottom: 60px !important;
+}
+
+/* row data */
+.ms-row-data{
+  box-sizing: border-box;
+  padding: 8px 8px;
+  margin: 2px 2px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+//* ms calendar header */
+.ms-common-calender-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.ms-common-calender-header-label {
+  flex: 1;
+  height: 1em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ms-icon-double-arrow .mat-icon {
+  margin: -22%;
+}
+//* end ms calendar header */
+
+.ms-public-header-logoPhoto {
+  width: 100px;
+  height: 100px;
+ }

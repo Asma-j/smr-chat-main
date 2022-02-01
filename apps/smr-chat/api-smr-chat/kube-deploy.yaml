@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: smr-chat-api-service
+spec:
+  selector:
+    app: smr-chat-api
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8084
+      targetPort: 8084
+      #nodePort: 30004
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smr-chat-api
+  labels:
+    app: smr-chat-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smr-chat-api
+  template:
+    metadata:
+      labels:
+        app: smr-chat-api
+    spec:
+      containers:
+      - name: smr-chat-api
+        image: 9g3r4dt6.gra7.container-registry.ovh.net/private/smr-chat-api:1.0.0
+        ports:
+         - containerPort: 8084
+        envFrom:
+        - secretRef:
+            name: prod-secrets-smr-chat
+        # env:
+        # - name: mongoUri
+        #   valueFrom: 
+        #     configMapKeyRef:
+        #       name: mongodb-configmap
+        #       key: database_url
+      imagePullSecrets:
+      - name: regcred-docker
+

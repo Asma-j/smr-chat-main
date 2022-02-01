@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: smr-chat-ui
+  labels:
+    app: smr-chat-ui
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: smr-chat-ui
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smr-chat-ui
+  labels:
+    app: smr-chat-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smr-chat-ui
+  template:
+    metadata:
+      labels:
+        app: smr-chat-ui
+    spec:
+      containers:
+      - name: smr-chat-ui
+        image: 9g3r4dt6.gra7.container-registry.ovh.net/private/smr-chat-ui:1.0.0
+        ports:
+         - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: prod-secrets-smr-chat
+      imagePullSecrets:
+      - name: regcred-docker
+

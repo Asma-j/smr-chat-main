@@ -1,0 +1,23 @@
+{
+  "/api": {
+    "target": "http://localhost:3334",
+    "secure": false,
+    "pathRewrite": {
+      "^/": ""
+    }
+  },
+  "/auth": {
+    "target": "http://localhost:3334",
+    "secure": false,
+    "pathRewrite": {
+      "^/auth": ""
+    }
+  },
+  "/socket.io/": {
+    "target": "http://localhost:3334",
+    "secure": false,
+    "pathRewrite": {
+      "^/socket.io/": ""
+    }
+  }
+}

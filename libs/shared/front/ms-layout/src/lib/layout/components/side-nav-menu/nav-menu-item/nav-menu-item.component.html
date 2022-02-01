@@ -1,0 +1,22 @@
+<ng-container *ngIf="navItem">
+  <a mat-list-item  (click)="onItemSelected(navItem)"
+    [ngClass]="{ 'activeItem': isActiveItem, 'expanded': expanded}" 
+    class="p-justify-between">
+    <span class="p-grid p-align-center" [ngStyle]="{'padding-left': (depth * 12) + 'px'}" >
+    <mat-icon *ngIf="navItem.matIcon" class="routeIcon">{{navItem.matIcon}}</mat-icon>
+    <span  [ngClass]="{ 'nav-item-text': navItem.children && navItem.children.length}"
+    (click)="clickParentText(navItem);$event.stopPropagation()"
+    >{{navItem.name}}</span> 
+  </span>
+    <span class="ms-expand-icon" *ngIf="navItem.children && navItem.children.length" >
+      <mat-icon 
+      [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+        expand_more
+      </mat-icon>
+    </span>
+  </a>
+  <ng-container *ngIf="expanded">
+    <mslibs-nav-menu-item *ngFor="let child of navItem.children" [navItem]="child" [depth]="depth+1">
+    </mslibs-nav-menu-item>
+  </ng-container>
+</ng-container>

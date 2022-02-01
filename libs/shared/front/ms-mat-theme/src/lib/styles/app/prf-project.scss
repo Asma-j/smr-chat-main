@@ -1,0 +1,77 @@
+@mixin prf-project-theme($theme) {
+  $primary: map-get($theme, primary);
+  .prf-hat-title {
+    color: mat-color($primary, 300);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .prf-divider-margin{
+    margin: 4px 0px;
+  }
+  
+  .header-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-item-title {
+    font-weight: 600;
+  }
+
+  .project-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .prf-project-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+  }
+
+  .header-item-icon {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .prf-filter-bg {
+    //background-color: white;
+    @include prf-box-shadow(1px, 0px, 5px, mat-color($primary));
+  }
+
+  .prf-snack-bar{
+    min-width: 360px !important;
+  }
+//header app
+  .prf-thid-block {
+    line-height: 16px;
+    font-size: 13px;
+    display: flex;
+    max-width: 170px;
+    max-height: 48px;
+    flex-direction: column;
+    > img {
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .sub-item1 {
+      font-size: 14px;
+    }
+    .sub-item2 {
+      color:  mat-color($primary);
+    }
+    .sub-item3 {
+      font-weight: 400;
+    }
+  }
+
+}
+
+@mixin prf-box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+  box-shadow: $x-axis $y-axis $blur $color !important;
+}

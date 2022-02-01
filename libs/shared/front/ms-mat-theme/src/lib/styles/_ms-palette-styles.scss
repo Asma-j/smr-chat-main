@@ -1,0 +1,18 @@
+@import "ms-palette";
+
+.mat-success {
+    background-color: mat-color($custom, success);
+    color: mat-color($custom, success-contrast);
+  }
+
+  .mat-danger {
+    background-color: mat-color($custom, danger);
+    color: mat-color($custom, danger-contrast);
+  }
+
+
+
+  .ms-bc-red{
+    color: mat-color($custom, ms-red);
+    background-color: mat-color($custom, ms-red-contrast);
+  }

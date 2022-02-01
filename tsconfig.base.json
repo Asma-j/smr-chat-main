@@ -1,0 +1,79 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": false,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "module": "esnext",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "es2015",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@mslibs/front-share": [
+        "libs/shared/front/front-share/src/index.ts"
+      ],
+      "@mslibs/ms-auth": [
+        "libs/shared/front/ms-auth/src/index.ts"
+      ],
+      "@mslibs/ms-mat-theme": [
+        "libs/shared/front/ms-mat-theme/src/index.ts"
+      ],
+      "@mslibs/ms-layout": [
+        "libs/shared/front/ms-layout/src/index.ts"
+      ],
+      "@mslibs/ms-user": [
+        "libs/shared/front/ms-user/src/index.ts"
+      ],
+      "@mslibs/ms-route": [
+        "libs/shared/front/ms-route/src/index.ts"
+      ],
+      "@mslibs/shared-back-auth": [
+        "libs/shared/back/auth/src/index.ts"
+      ],
+      "@mslibs/shared-back-user": [
+        "libs/shared/back/user/src/index.ts"
+      ],
+      "@mslibs/shared-back-chat": [
+        "libs/shared/back/chat/src/index.ts"
+      ],
+      "@mslibs/shared-front-chat": [
+        "libs/shared/front/chat/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/user/models": [
+        "libs/shared/front-back/user/models/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/user/dtos": [
+        "libs/shared/front-back/user/dtos/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/chat/dtos": [
+        "libs/shared/front-back/chat/dtos/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/chat/models": [
+        "libs/shared/front-back/chat/models/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/widget": [
+        "libs/shared/front-back/widget/src/index.ts"
+      ],
+      "@mslibs/shared/front-back/auth/dtos": [
+        "libs/shared/front-back/auth/dtos/src/index.ts"
+      ]
+    },
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

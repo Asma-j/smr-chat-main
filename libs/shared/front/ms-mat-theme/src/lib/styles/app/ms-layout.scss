@@ -1,0 +1,65 @@
+@mixin ms-layout-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  .ms-thid-block {
+    line-height: 16px;
+    font-size: 13px;
+    display: flex;
+    max-width: 170px;
+    max-height: 48px;
+    flex-direction: column;
+    > img {
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .sub-item1 {
+      font-size: 14px;
+    }
+    .sub-item2 {
+      //color: #c8c8c8;
+      color: mat-color($primary);
+    }
+    .sub-item3 {
+      font-weight: 400;
+    }
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .space-horz-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .align-center-flex {
+    align-items: center;
+  }
+
+  .align-end-flex {
+    align-items: flex-end;
+  }
+
+  .left-flex-spacer {
+    flex: 1 1 auto;
+  }
+
+  .chart-view-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+  .activeItem{
+    // background-color: mat-color($primary) !important;
+    color: mat-color($primary) !important;
+ }
+  .ms-side-nav-box {
+    @include ms-box-shadow(1px, 0px, 5px, mat-color($primary));
+  }
+}

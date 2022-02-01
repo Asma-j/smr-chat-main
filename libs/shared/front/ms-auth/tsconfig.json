@@ -1,0 +1,7 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "jest"]
+  },
+  "include": ["**/*.ts", "../../ms-user/src/lib/user.service.ts"]
+}

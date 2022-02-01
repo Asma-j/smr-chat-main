@@ -1,0 +1,48 @@
+<h4> Profile</h4>
+<ng-container *ngIf="profile$ | async as profile">
+  <mat-card>
+    <div class="p-justify-between p-grid p-align-center">
+      <span> {{ profile.username }} </span>
+      <span class="left-flex-spacer"></span>
+      <mat-chip-list>
+        <mat-chip>
+          Connector: &nbsp;
+          <ng-container [ngSwitch]="profile.provider" >
+            <mat-icon *ngSwitchCase="'local'" color="accent" >settings_input_svideo</mat-icon>
+            <mat-icon *ngSwitchCase="'facebook'" svgIcon="facebooklogo"></mat-icon>
+            <mat-icon *ngSwitchCase="'google'" svgIcon="googlelogo"></mat-icon>
+          </ng-container>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </mat-card>
+
+  <mat-card>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="First Name *" formControlName="firstName" />
+        <div *ngIf="submitted && registerForm.controls.firstName.errors">
+          <mat-error *ngIf="registerForm.controls.firstName.errors.required">First Name is required</mat-error>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lastName" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="email" placeholder="Email *" formControlName="email" />
+        <div *ngIf="submitted && registerForm.controls.email.errors">
+          <mat-error *ngIf="registerForm.controls.email.errors.required">Email is required</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-error *ngIf="error" class="alert alert-danger">{{error}}</mat-error>
+
+      <div class="p-grid p-justify-around">
+        <button mat-raised-button type="submit" color="primary" [disabled]="!registerForm.valid">
+          <mat-icon>how_to_reg</mat-icon> Update
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</ng-container>

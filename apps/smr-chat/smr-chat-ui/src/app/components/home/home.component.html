@@ -1,0 +1,31 @@
+<div class="ms-container" [class.ms-is-mobile]="mobileQuery.matches">
+
+  <ms-header (onChangeTheme)="toggleTheme($event)" 
+    (onToggleMenu)="snav.toggle()"  [profile]="profile$ | async">
+  </ms-header>
+
+  
+<mat-sidenav-container class="ms-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" fixedTopGap="56"
+      [fixedInViewport]="mobileQuery.matches">
+      <mat-nav-list class="ms-sidenav">
+        <!-- <ms-side-nav-menu (onMenuSelected)="mobileQuery.matches ? snav.toggle() : 'null'" [navItems]="newNavItems$ | async" [isFull]="true"></ms-side-nav-menu> -->
+        <ng-container *ngIf="newNavItems$ | async as navItems ">
+          <ng-container *ngFor="let item of navItems; let index=index; last as isLast">
+            <mslibs-nav-menu-item (onMenuSelected)="snav.toggle()" *ngIf="!isLast"
+              [navItem]="item"></mslibs-nav-menu-item>
+          </ng-container>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

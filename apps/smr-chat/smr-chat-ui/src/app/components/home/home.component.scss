@@ -1,0 +1,53 @@
+.ms-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+h1.ms-app-name {
+  margin-left: 8px;
+}
+
+.ms-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  top: 64px;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.ms-sidenav-container-no-footer{
+  bottom: 48px;
+
+}
+
+.ms-is-mobile .ms-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  // flex: 1 0 auto;
+   top: 56px;
+  // bottom: 0;
+}
+
+
+//ovvride the content 
+.mat-drawer-content{
+  margin: 0px 2px;
+  //min-height: 100vh;
+}
+
+
+.mat-drawer {
+  overflow-x: hidden;
+}
+
+::ng-deep .mat-sidenav {
+  width: 210px;
+}

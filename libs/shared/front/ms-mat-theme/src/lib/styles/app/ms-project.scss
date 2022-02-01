@@ -1,0 +1,43 @@
+@mixin ms-project-theme($theme) {
+  $primary: map-get($theme, primary);
+  .ms-hat-title {
+    color: mat-color($primary, 300);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+
+  
+  .header-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-item-title {
+    font-weight: 500;
+  }
+
+  .item-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ms-project-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+  }
+
+  .header-item-icon {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ms-filter-bg {
+    background-color: white;
+    @include ms-box-shadow(1px, 0px, 5px, mat-color($primary));
+  }
+}

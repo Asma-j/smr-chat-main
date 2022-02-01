@@ -1,0 +1,48 @@
+
+.ms-header-toolbar{
+  width: 100%;
+}
+
+.ms-trigger-menu-header{
+  margin-right: -12px;
+}
+
+.ms-account-button{
+  margin-left: 20px;
+}
+
+.ms-fixed-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    border-bottom: 1px solid ;
+}
+
+/** Config menu item*/
+.ms-config-item-menu{
+   display: flex;
+}
+
+.ms-toggle-menu-config{
+  display: flex;
+  display: block;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box;
+      position: relative;
+      height: inherit;
+  }
+}
+
+.ms-smr-chat-header-logoPhoto{
+  width: 48px;
+  height: 48px;
+}

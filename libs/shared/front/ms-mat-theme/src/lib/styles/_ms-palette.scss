@@ -1,0 +1,22 @@
+///////////////
+@import "~@angular/material/theming";
+
+$ms-p-red: mat-palette($mat-red,700);
+$ms-p-bc-red: mat-palette($mat-red,200);
+
+$ms-mat-red: mat-color($ms-p-red);
+$ms-mat-bc-red: mat-color($ms-p-bc-red);
+
+$custom-collection: (
+    warning :  #FFC116,
+    success :  #0a630f,
+    danger:   red,
+    ms-red:  $ms-mat-red,
+    contrast: (
+        warning :  #000000,
+        success :  #FFFFFF,
+        danger:    #FFFFFF,
+        ms-red:  $ms-mat-bc-red
+    )
+);
+$ms-app-custom: mat-palette($custom-collection, custom);

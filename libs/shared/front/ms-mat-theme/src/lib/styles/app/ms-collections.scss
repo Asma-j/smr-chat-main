@@ -1,0 +1,54 @@
+@mixin ms-collection-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+  
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+  
+
+    .ms-nav-border {
+        border-top: 1px solid mat-color($background) !important;
+    }
+
+    .ms-filter-block{
+        position: absolute;
+        top: 64px;
+        width: 100%;
+        background-color: mat-color($background, app-bar);
+        opacity: 0.95;
+        z-index: 102;
+    }
+    .ms-is-mobile .ms-filter-block {
+         top: 56px;
+      }
+      
+    // collection data item 
+    .label-item:nth-child(even) {
+        background: mat-color($accent);// mat-color($foreground, hint-text);
+        //border: 1px solid mat-color($foreground, text);
+        border-radius: 2px;
+    }
+    .label-item:nth-child(odd) {
+        //background: mat-color($background, app-bar);
+        // border: 1px solid #eeeeee;
+        // border-radius: 5px;
+    }
+    /* collection data item  end */ 
+
+    /* calendar view buttons groups with bdge*/
+    .ms-calendar-group-buttons .mat-button-toggle{
+        padding: 4px 0px;
+    }
+    .ms-calendar-group-buttons  .mat-badge-content {
+        background-color: mat-color($background, tooltip);
+    }
+
+    .ms-calendar-group-buttons .mat-button-toggle-checked{
+        color: mat-color($primary);
+        .mat-badge-content{
+            background-color: mat-color($primary);
+        }
+    }
+    
+  }

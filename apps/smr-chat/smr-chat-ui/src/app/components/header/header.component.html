@@ -1,0 +1,37 @@
+<mat-toolbar color="default" class="ms-fixed-header">
+  <!-- <mat-toolbar-row> -->
+  <!-- Rigth side -->
+  <div class="p-grid ms-header-toolbar p-justify-between">
+
+    <img src="/assets/images/SMENCER_Logo_DS.png" alt="image" class="ms-smr-chat-header-logoPhoto">
+    <!-- Menu / profile  -->
+    <ng-container *ngIf="profile">
+      <div class="ms-trigger-menu-header">
+        <a mat-icon-button color="primary" [routerLink]="['/private/rooms']">
+          <!-- matBadge="1" -->
+          <mat-icon  aria-label="more_menu">mark_email_unread</mat-icon>
+        </a>
+        <a mat-icon-button color="primary" [matMenuTriggerFor]="beforeMenu">
+          <mat-icon aria-label="Menu">more_vert</mat-icon>
+        </a>
+
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item [routerLink]="['/private/user/profile']">
+            <mat-icon aria-label="settings">face</mat-icon> Mon profile
+            <!-- {{profile.username}} -->
+          </button>
+
+          <button mat-menu-item (click)="themeChange()">
+            <mat-icon aria-label="Theme">format_color_fill</mat-icon> Dark/Light
+          </button>
+
+          <button mat-menu-item (click)="logout()">
+            <mat-icon aria-label="logout">logout</mat-icon>Logout
+          </button>
+
+        </mat-menu>
+      </div>
+    </ng-container>
+
+  </div>
+</mat-toolbar>

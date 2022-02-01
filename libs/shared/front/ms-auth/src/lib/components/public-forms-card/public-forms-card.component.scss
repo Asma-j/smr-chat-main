@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ms-public-forms-card {
+    min-width: 300px;
+    max-width: 400px;
+    margin: 20px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+
+  .mr-top-16{
+      margin-top: 16px;
+  }
+
+  .mr-bottom-16{
+    margin-bottom: 16px;
+  }
+
+  /** To check */
+  .alert-danger {
+    background-color: #f44336; /* Red */
+  }
+  .alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .ms-public-header-logo {
+   // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    font-size: 50px;
+  }
+
